@@ -27,7 +27,6 @@ app.post("/submit-entry", (req, res) => {
 
     const newEntry = req.body;
     newEntry.time = timeStamp;
-    console.log(newEntry);
     entries.push(newEntry);
     res.redirect("/");
 });
