@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+    
+    <form action="/view" method="GET">
+        <input type="submit" value="back" id="back-to-list">
+    </form>
+
+    <form action="edit" method="POST">
+        <input type="submit" value="Edit" id="edit-btn">
+        <input type="text" name="title" value="<%= title %>" style="display: none;">
+        <input type="text" name="content" value="<%= content %>" style="display: none;">
+        <input type="text" name="index" value="<%= index %>" style="display: none;">
+    </form>
+
+    <form action="/delete" method="POST" onclick="return confirm('Are you sure?')">
+        <input type="text" name="index" value="<%= index %>" style="display: none;">
+        <input type="submit" value="Delete" id="delete-btn">
+    </form>
+
+
+
+    <div id="clicked-container">
+        <h1 id="clicked-title"><%= title %></h1>
+        <p id="clicked-content"><%= content %></p>
+    </div>
+
+<%- include("partials/footer.ejs") %>

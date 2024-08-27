@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+    
+    
+
+
+    <form action="/home" method="GET">
+        <input type="submit" value="home" id="home-btn-view">
+    </form>
+    
+    <%if (locals.entries.length !== 0) { %>
+        <ul id="entry-list">
+            <% entries.forEach((entry, index) => { %>
+                <li>
+                    <div id="li-title-container">
+                        <h1> <%= entry.title   %> </h1>
+                        <h3> <%= entry.time %></h3>
+                    </div>
+
+                    <p> <%= entry.content %></p>
+                </li>
+            <%});%>
+        </ul>
+    <%} else {%>
+        <ul id="entry-list">
+                <h1>Your memory is empty</h1>
+        </ul>
+    <% }%>
+    
+    <!-- this is a hidden form -->
+     <form id="indexForm" action="view-memory" method="POST" style="display: none">
+        <input type="hidden" id="li-index" name="index">
+     </form>
+    <script src="scripts/view.js"></script>
+    
+
+<%- include("partials/footer.ejs") %>

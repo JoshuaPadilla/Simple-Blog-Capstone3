@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+    <form action="/view" method="GET">
+        <input type="submit" value="cancel" id="back-to-list">
+    </form>
+
+
+    <form action="view" id="clicked-container" method="POST">
+        <input type="text" name="title" value="<%= title %>" required id="edit-title">
+        <textarea type="text" name="content" required id="edit-content"><%= content %></textarea>
+        <input type="text" name="index" value="<%= index %>" style="display: none">
+
+        <input type="submit" value="done" id="submit-btn">
+    </form>
+    
+
+<%- include("partials/footer.ejs") %>

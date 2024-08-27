@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+    <form action="/home" method="GET">
+        <input type="submit" value="back" id="home-btn-add">
+    </form>
+
+    <div class="add-body-container">
+        <h1 id="add-title">Add new memories to remember.</h1>
+
+        <form action="submit-entry" id="add-content" method="POST">
+            <input type="text" name="title" id="title" placeholder="Title here" required>
+            <textarea type="text" name="content" id="content" placeholder="Write here ..." required></textarea>
+            <input type="submit" value="Add" id="submit-btn">
+        </form>
+    </div>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+
+    <div class="title-container">
+        <h1>Welcome to memories, an app that can make your memories last.</h1>
+    </div>
+
+    <div class="button-container">
+        <form action="/add" method="POST">
+            <input type="submit" value="Add new" class="buttons">
+        </form>
+
+        <form action="/view" method="GET">
+            <input type="submit" value="View memories" class="buttons">
+        </form>
+
+    </div>
+    
+</div>
+
+<%- include("partials/footer.ejs") %>
